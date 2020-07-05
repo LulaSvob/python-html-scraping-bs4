@@ -44,7 +44,7 @@ rows = [row for row in rows if 'Average high' in str(row)]
 high_temps = []
 for row in rows:
     tds = row.find_all('td')
-    for i in range(1, len(tds)):
+    for i in range(0, len(tds)):
         high_temps.append(tds[i].text)
 # print(high_temps)
 
@@ -71,7 +71,7 @@ for state_link in state_links:
     high_temps = []
     for row in rows:
         tds = row.find_all('td')
-        for i in range(1, len(tds)):
+        for i in range(0, len(tds)):
             high_temps.append(tds[i].text)
     s = soup.title.string
     state = s[s.find(' '):s.find('-')].strip()
